@@ -1537,10 +1537,6 @@ video {
   gap: 19px;
 }
 
-.gap-\[48px\] {
-  gap: 48px;
-}
-
 .gap-\[4px\] {
   gap: 4px;
 }
@@ -2988,10 +2984,6 @@ video {
 
   .lg\:items-center {
     align-items: center;
-  }
-
-  .lg\:justify-center {
-    justify-content: center;
   }
 
   .lg\:justify-between {
