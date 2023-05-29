@@ -989,6 +989,10 @@ video {
   width: auto;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
 .max-w-none {
   max-width: none;
 }
