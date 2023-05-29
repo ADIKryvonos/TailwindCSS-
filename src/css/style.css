@@ -806,6 +806,10 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-\[20px\] {
+  margin-top: 20px;
+}
+
 .mt-auto {
   margin-top: auto;
 }
@@ -929,10 +933,6 @@ video {
   height: 24px;
 }
 
-.h-\[402px\] {
-  height: 402px;
-}
-
 .h-\[42px\] {
   height: 42px;
 }
@@ -1037,6 +1037,11 @@ video {
   border-collapse: separate;
 }
 
+.rotate-180 {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .\!transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
@@ -1055,6 +1060,16 @@ video {
 
 .transform-none {
   transform: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 
 .cursor-help {
@@ -2250,6 +2265,14 @@ video {
   padding-bottom: 24px;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pb-\[48px\] {
+  padding-bottom: 48px;
+}
+
 .pb-des {
   padding-bottom: 48px;
 }
@@ -2830,8 +2853,20 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2842,6 +2877,22 @@ video {
 
 .duration-0 {
   transition-duration: 0s;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .ease-in {
@@ -2998,14 +3049,14 @@ video {
     gap: 48px;
   }
 
+  .lg\:py-\[0\] {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   .lg\:py-\[84px\] {
     padding-top: 84px;
     padding-bottom: 84px;
-  }
-
-  .lg\:py-\[des\] {
-    padding-top: des;
-    padding-bottom: des;
   }
 
   .lg\:py-des {

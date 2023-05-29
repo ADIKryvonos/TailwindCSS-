@@ -1,4 +1,4 @@
-const CardSection = document.querySelector('.card-list');
+const cardSection = document.querySelector('.card-list');
 
 const BAZE_URL = 'https://voodoo-sandbox.myshopify.com/';
 
@@ -18,37 +18,48 @@ function createMarkup(data) {
   const markup = data
     .slice(1)
     .map(({ title, images, variants }) => {
-      return `<li class="w-[342px] lg:w-[300px] h-[402px] relative">
-
+      return `<li class="w-[342px] lg:w-[300px] pb-[48px] relative ">
+        <a href="#">
          <div class="w-[47px] h-[24px] bg-mainTextColor text-secondTextColor rounded absolute top-3 left-3 p-2 font-normal text-[12px] leading-[15px] flex items-center justify-center">
               USED
             </div>
             <img src="${
               images[0].src
-            }" alt="card" width="342px" height="300px" class="border border-black rounded">
-            <div class="flex justify-between mb-3">
+            }" alt="${title}" width="342px" height="300px" class="border border-black rounded">
+            <ul class="flex justify-between mb-3">
 
-              <div class="flex flex-col">
+              <li class="flex flex-col">
                 <span>${title.slice(8, 20)}</span>
                 <span>${variants[0].price} KR.</span>
-              </div>
+              </li>
 
-              <div class="flex flex-col items-end">
+              <li class="flex flex-col items-end">
                 <span>Condition</span>
                 <span>Slightly used</span>
-              </div>
-            </div>
-
-            <button class="w-[342px] h-[42px] bg-mainTextColor text-secondTextColor rounded lg:hidden">
+              </li>
+            </ul>
+        </a>
+               <button class=" w-[342px] h-[42px] bg-mainTextColor text-secondTextColor rounded lg:hidden">
               PICK-UP IN <span class="underline ">2200</span>
             </button>
-
-           
           </li>`;
     })
     .join('');
 
-  CardSection.innerHTML = markup;
+  cardSection.innerHTML = markup;
 }
 
 createCardList();
+
+// ----------------------DROPDOWN--------------
+
+const btn = document.querySelector('.btn');
+const img = document.querySelector('.img');
+const dropdown = document.querySelector('.dropdown');
+
+btn.addEventListener('click', onClick);
+
+function onClick() {
+  dropdown.classList.toggle('hidden');
+  img.classList.toggle('rotate-180');
+}
